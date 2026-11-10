@@ -36,6 +36,7 @@
     /* Styles for profile photo and status badge */
     .profile-photo { width: 100%; max-width: 250px; border-radius: 20px; border: 2px solid var(--line); margin-bottom: 18px; object-fit: cover; }
     .status-badge { display: inline-block; background: rgba(255, 193, 7, 0.15); color: #ffc107; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; border: 1px solid rgba(255, 193, 7, 0.3); }
+    .published-badge { display: inline-block; background: rgba(102, 224, 194, 0.15); color: var(--accent); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; border: 1px solid rgba(102, 224, 194, 0.3); }
   </style>
 </head>
 <body>
@@ -44,7 +45,7 @@
     <nav aria-label="Main navigation">
       <a class="brand" href="#home">AJOY <span>SHIL</span></a>
       <div class="navlinks">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#lifetrack">LifeTrack</a><a href="#mediedge">MediEdge</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#mediedge">MediEdge</a><a href="#lifetrack">LifeTrack</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
       </div>
     </nav>
   </div>
@@ -92,26 +93,69 @@
       <p class="lead">My projects explore how affordable embedded platforms can acquire physiological and motion data, process it locally, and communicate useful information reliably.</p>
       <div class="grid" style="margin-top:25px">
         
+        <!-- 1. MEDIEDGE (Now First) -->
+        <article class="card wide" id="mediedge">
+          <div class="published-badge">Published in Measurement (Elsevier)</div>
+          <div class="tagline">Cyber-Physical IoT · Remote Patient Monitoring · Edge Computing</div>
+          <h3>MediEdge: A low-cost edge-based cyber-physical IoT platform for real-time remote patient monitoring with comparative validation</h3>
+          <p>MediEdge is a low-cost remote patient-monitoring platform developed using an ESP32-based embedded architecture and physiological sensors. The system explores local acquisition and processing of vital-sign data with secure cloud synchronization.</p>
+          
+          <div class="statgrid">
+            <div class="stat"><strong>$34.50</strong><span>Reported bill of materials</span></div>
+            <div class="stat"><strong>2.88 bpm</strong><span>Heart Rate MAE (ICC: 0.961)</span></div>
+            <div class="stat"><strong>2.12%</strong><span>SpO₂ MAE (ICC: 0.786)</span></div>
+            <div class="stat"><strong>2000</strong><span>Paired prototype-reference observations</span></div>
+          </div>
+
+          <div class="two-col">
+            <div>
+              <h3>System Architecture & Hardware</h3>
+              <ul>
+                <li>Dual-core ESP32 with FreeRTOS task separation.</li>
+                <li>AD8232 single-lead ECG sensor and waveform processing.</li>
+                <li>MAX30100 for PPG-based heart rate and SpO₂.</li>
+                <li>DS18B20 body-temperature sensing and DHT11 ambient monitoring.</li>
+                <li>Encrypted cloud synchronization using AES-256-CBC and HMAC-SHA256.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Key Engineering Results</h3>
+              <ul>
+                <li>250 Hz ECG sampling with 2.3s end-to-end latency.</li>
+                <li>98.7% cloud synchronization success.</li>
+                <li>12.6-hour continuous battery operation (5000 mAh).</li>
+                <li>MicroSD card buffering for extended offline data continuity.</li>
+                <li>Demonstrated edge resilience under tested intermittent connectivity.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:20px; margin-bottom:0;">
+            <strong>Publication Reference:</strong> Shil, A., Mohajan, J., & Islam, A. J. (2026). <em>Measurement (Elsevier)</em>, Vol. 292, Article 123099. DOI: 10.1016/j.measurement.2026.123099
+          </div>
+        </article>
+
+        <!-- 2. LIFETRACK (Now Second) -->
         <article class="card wide" id="lifetrack">
           <div class="status-badge">Under Review in Journal</div>
           <div class="tagline">Wearable IoT · Edge AI · Fall Detection · Biomedical Engineering</div>
           <h3>LifeTrack: A Low-Cost Edge-First Wearable IoT Platform with Measured Cryptographic Overhead and Edge-Resilience for Real-Time Health Monitoring and Fall Detection</h3>
           <p>LifeTrack is a low-cost wearable health-monitoring prototype built around a dual-core ESP32. It combines physiological sensing, motion-based fall detection, local edge processing, and GSM emergency communication. The design aims to remain useful when Wi-Fi or internet connectivity is unavailable.</p>
+          
           <div class="statgrid">
             <div class="stat"><strong>$45</strong><span>Reported bill of materials</span></div>
-            <div class="stat"><strong>5,000</strong><span>Reported adult volunteers in physiological validation</span></div>
+            <div class="stat"><strong>5,000</strong><span>Reported adult volunteers in validation</span></div>
             <div class="stat"><strong>18 mW</strong><span>Measured encryption power overhead</span></div>
             <div class="stat"><strong>9.4 s</strong><span>Fall-alert time with Wi-Fi disabled</span></div>
           </div>
+
           <div class="two-col">
             <div>
               <h3>System architecture</h3>
               <ul>
                 <li>Dual-core ESP32 with FreeRTOS task separation.</li>
-                <li>Sensor-processing tasks separated from web-server and GSM communication tasks.</li>
                 <li>Local web dashboard hosted on the device for offline access.</li>
                 <li>GSM-based SMS/voice emergency alerting independent of Wi-Fi.</li>
-                <li>AES-256-CBC encryption for data before optional cloud transmission.</li>
+                <li>AES-256-CBC encryption for data before cloud transmission.</li>
               </ul>
             </div>
             <div>
@@ -120,9 +164,8 @@
                 <li>MAX30100 — heart rate and SpO₂ sensing.</li>
                 <li>MPU6050 — acceleration and angular-motion sensing.</li>
                 <li>MLX90614 — non-contact temperature sensing.</li>
-                <li>DS3231 — real-time clock.</li>
                 <li>NEO-6M — GPS positioning.</li>
-                <li>SIM800L — GSM communication and emergency alerts.</li>
+                <li>SIM800L — GSM communication.</li>
               </ul>
             </div>
           </div>
@@ -134,56 +177,15 @@
                 <tr><td>Heart rate</td><td>MAE: 2.126 bpm</td><td>Compared with a commercial reference device</td></tr>
                 <tr><td>SpO₂</td><td>MAE: 1.214%</td><td>Compared with a fingertip pulse oximeter</td></tr>
                 <tr><td>Skin temperature</td><td>MAE: 0.097°C</td><td>After applying a calibration offset</td></tr>
-                <tr><td>Step counting</td><td>42.18% agreement within ±5 steps</td><td>Reported step-count evaluation</td></tr>
+                <tr><td>Step counting</td><td>42.18% agreement</td><td>Within ±5 steps evaluation</td></tr>
               </tbody>
             </table>
           </div>
-          <h3 style="margin-top:22px">Fall detection and machine learning</h3>
-          <p>The embedded fall-detection logic uses a temporal sequence of freefall, impact, and post-impact immobility. In the reported simulated-event evaluation, sensitivity was 96.24% and specificity was 98.05%. Precision was 57.40%, corresponding to an estimated 2–4 false alarms per 24 hours in the reported test conditions.</p>
-          <p>On the public SisFall dataset, the study reports Leave-One-Subject-Out (LOSO) evaluation. XGBoost achieved the strongest reported balanced accuracy (84.5%) and sensitivity (81.03%) among the compared models. CNN-1D and BiLSTM did not outperform XGBoost. An ablation analysis indicated that temporal context is important and single-snapshot classifiers are inadequate for this task.</p>
-          <h3 style="margin-top:22px">Security and edge-resilience</h3>
-          <ul>
-            <li>AES-256-CBC encryption was evaluated for its computational and power cost; the reported additional power was approximately 18 mW.</li>
-            <li>With Wi-Fi disabled, reported GSM fall-alert time remained similar: approximately 9.4 seconds versus 9.1 seconds in the comparison condition.</li>
-          </ul>
-          <div class="callout"><strong>Research contribution:</strong> LifeTrack investigates the feasibility of combining low-cost wearable sensing, local processing, security-cost measurement, and connectivity-independent emergency communication in one embedded platform.</div>
-          <h3>Limitations and responsible interpretation</h3>
-          <ul>
-            <li>The prototype is intended for non-clinical trend monitoring and is not a diagnostic or treatment device.</li>
-            <li>Fall events were simulated by younger adults on a padded mat; performance in real-world older-adult falls remains unestablished.</li>
-            <li>The reported prototype weighs approximately 180 g and uses a 2G SIM800L module, whose network availability varies by country and operator.</li>
-            <li>Security limitations include firmware-embedded keys, an HTTP local dashboard, and SMS command authentication based on phone number. The system should not be considered secure against all adversarial attacks.</li>
-            <li>Participant sex, BMI, and skin tone were not recorded, limiting subgroup analysis of optical-sensor performance.</li>
-            <li>Stress, sleep-efficiency, and calorie estimates were not validated against medical reference standards.</li>
-            <li>The reported false-alarm rate requires further reduction and prospective real-world evaluation before safety-critical use.</li>
-          </ul>
+          <div class="callout" style="margin-top:20px; margin-bottom:0;">
+            <strong>Research contribution:</strong> LifeTrack investigates the feasibility of combining low-cost wearable sensing, local processing, security-cost measurement, and connectivity-independent emergency communication in one embedded platform.
+          </div>
         </article>
-
-        <article class="card" id="mediedge">
-          <div class="tagline">Cyber-Physical IoT · Remote Patient Monitoring</div>
-          <h3>MediEdge: A Low-Cost Edge-Based Cyber-Physical IoT Platform for Real-Time Remote Patient Monitoring with Comparative Validation</h3>
-          <p>MediEdge is a low-cost remote patient-monitoring platform developed using an ESP32-based embedded architecture and physiological sensors. The system explores local acquisition and processing of vital-sign data with secure cloud synchronization.</p>
-          <ul>
-            <li>AD8232 ECG sensor and waveform processing.</li>
-            <li>MAX30100 for heart rate and SpO₂.</li>
-            <li>DS18B20 body-temperature sensing and DHT11 ambient monitoring.</li>
-            <li>Encrypted cloud synchronization using AES-256-CBC and HMAC-SHA256, with timestamps and replay checks.</li>
-            <li>ECG processing includes baseline correction, 50 Hz notch filtering, low-pass filtering, and QRS analysis.</li>
-          </ul>
-          <p><strong>Reported platform indicators:</strong> approximately $34.50 bill of materials, 4.3-hour battery operation, 98.7% synchronization success, and 8.2 ± 2.1 seconds reconnection time.</p>
-          <p><strong>Publication:</strong> Published in <em>Measurement (Elsevier)</em>, Vol. 292, 2026.</p>
-        </article>
-
-        <article class="card">
-          <div class="tagline">Wearable Systems · Sensor Fusion</div>
-          <h3>LifeTrack wearable prototype — conference research</h3>
-          <p>A related wearable implementation combines physiological and motion sensing with GPS positioning for health monitoring and fall-related event analysis.</p>
-          <ul>
-            <li>ESP32, MAX30100, MLX90614, MPU6050, and NEO-6M GPS.</li>
-            <li>Reported simulated evaluation includes heart-rate, SpO₂, step-count, temperature, and GPS error measures.</li>
-            <li>Accepted for presentation at IEEE SPICSCON 2026.</li>
-          </ul>
-        </article>
+        
       </div>
     </div>
   </section>
@@ -195,21 +197,56 @@
       <div class="grid">
         <article class="card"><h3>Embedded & IoT systems</h3><p>ESP32, sensor integration, embedded C/C++, FreeRTOS concepts, wireless communication, and IoT prototyping.</p></article>
         <article class="card"><h3>Biomedical signal processing</h3><p>ECG and PPG signal acquisition, filtering, waveform analysis, heart-rate and SpO₂ monitoring, and comparative validation.</p></article>
-        <article class="card"><h3>Programming & analysis</h3><p>Python, MATLAB, data processing, statistical analysis, and experimental result visualization.</p></article>
+        <article class="card"><h3>Programming & analysis</h3><p>Python, MATLAB, C/C++, data processing, statistical analysis, and experimental result visualization.</p></article>
         <article class="card"><h3>Research & development</h3><p>Hardware prototyping, system integration, experimental evaluation, technical documentation, and research manuscript preparation.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="training">
+  <!-- UPDATED EXPERIENCE SECTION -->
+  <section id="experience">
     <div class="wrap">
-      <div class="section-kicker">04 / Training & leadership</div>
+      <div class="section-kicker">04 / Experience & Leadership</div>
       <h2 class="section-title">Practical experience</h2>
       <div class="grid">
-        <article class="card"><h3>Industrial training</h3><p><strong>Hathazari 100 MW Peaking Power Plant, BPDB</strong><br>Chattogram, Bangladesh<br>26 September – 08 October 2024 (15 days)</p></article>
-        <article class="card"><h3>Student leadership</h3><p><strong>PCIU EEE Club</strong><br>Joint Secretary and former Convenor. Participated in student coordination and departmental activities.</p></article>
-        <article class="card"><h3>Selected learning</h3><ul><li>Introduction to the Internet of Things — Coursera</li><li>MATLAB Programming — MathWorks</li></ul></article>
-        <article class="card"><h3>Teaching & knowledge sharing</h3><p>Founder and instructor at Giyan Matrix (জ্ঞান ম্যাট্রিক্স), focused on mathematics education and concept-driven problem solving.</p></article>
+        
+        <!-- BPDB Industrial Training -->
+        <article class="card wide">
+          <h3>Industrial Trainee</h3>
+          <p><strong>Bangladesh Power Development Board (BPDB) — Hathazari 100MW Peaking Power Station</strong><br>
+          <span style="color:var(--accent); font-weight:600;">September 26, 2024 – October 08, 2024</span></p>
+          <ul>
+            <li>Completed a comprehensive 2-week industrial training program at a 100MW peaking power station.</li>
+            <li>Gained practical exposure to power generation processes, plant operations, and maintenance protocols.</li>
+            <li>Observed the functioning of power generation units and learned about grid stability and peak load management.</li>
+            <li>Studied industrial safety protocols, risk management, and standard operating procedures within a high-voltage power facility.</li>
+          </ul>
+        </article>
+
+        <!-- Teaching Experience -->
+        <article class="card">
+          <h3>Mathematics Instructor</h3>
+          <p><strong>HSC & SSC Level (Bangladesh)</strong><br>
+          <span style="color:var(--accent); font-weight:600;">4+ Years Experience</span></p>
+          <p>Taught Mathematics and Higher Mathematics to SSC and HSC students in coaching and academic support environments. Developed clear and structured explanations to improve students' conceptual understanding and problem-solving ability.</p>
+        </article>
+
+        <!-- Leadership -->
+        <article class="card">
+          <h3>Student Leadership</h3>
+          <p><strong>PCIU EEE Club</strong><br>Joint Secretary and former Convenor. Participated in student coordination, organized academic events, technical programs, and departmental activities.</p>
+        </article>
+
+        <!-- Certifications -->
+        <article class="card wide">
+          <h3>Selected Learning & Certifications</h3>
+          <ul>
+            <li><strong>The Fundamentals of Digital Marketing</strong> — Google Digital Unlocked (2022)</li>
+            <li><strong>Introduction to the Internet of Things</strong> — Coursera (2025)</li>
+            <li><strong>MATLAB Programming</strong> — MathWorks (2025)</li>
+          </ul>
+        </article>
+
       </div>
     </div>
   </section>
