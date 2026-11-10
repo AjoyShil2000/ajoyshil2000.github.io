@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ajoy Shil | Biomedical & IoT Researcher | MediEdge</title>
-  <meta name="description" content="Official researcher profile of Ajoy Shil, developer of MediEdge, a low-cost edge-based cyber-physical IoT platform for remote patient monitoring.">
+  <title>Ajoy Shil | EEE Graduate & IoT Researcher</title>
+  <meta name="description" content="Academic portfolio of Ajoy Shil, EEE graduate and first-author of MediEdge. Specializing in biomedical signal processing, edge computing, and IoT healthcare systems.">
   <meta name="author" content="Ajoy Shil">
+  
+  <!-- Open Graph -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Ajoy Shil | Researcher & MediEdge Developer">
+  <meta property="og:title" content="Ajoy Shil | EEE Graduate & IoT Researcher">
   <meta property="og:description" content="Research in biomedical signal processing, IoT health monitoring, and edge-based healthcare systems.">
-  <meta property="og:image" content="assets/ajoy-shil-profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ajoy Shil | Researcher & MediEdge Developer">
-  <meta name="twitter:image" content="assets/ajoy-shil-profile.jpg">
+  <meta property="og:image" content="https://ajoyshil2000.github.io/ajoy-shil-profile.jpg">
   <link rel="canonical" href="https://ajoyshil2000.github.io/">
+  
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,9 +22,11 @@
     "mainEntity": {
       "@type": "Person",
       "name": "Ajoy Shil",
-      "description": "Biomedical and IoT researcher; developer of the MediEdge remote patient monitoring platform.",
-      "image": "https://ajoyshil2000.github.io/assets/ajoy-shil-profile.jpg",
+      "email": "ajoyshil2000@gmail.com",
+      "description": "Electrical and Electronic Engineering graduate; developer of the MediEdge remote patient monitoring platform.",
+      "image": "https://ajoyshil2000.github.io/ajoy-shil-profile.jpg",
       "url": "https://ajoyshil2000.github.io/",
+      "address": { "@type": "PostalAddress", "addressLocality": "Chattogram", "addressCountry": "Bangladesh" },
       "sameAs": [
         "https://scholar.google.com/citations?user=pyWInO8AAAAJ&hl=en",
         "https://orcid.org/0009-0004-8453-2406",
@@ -38,75 +41,249 @@
         "Internet of Things",
         "Remote Patient Monitoring",
         "Embedded Systems",
-        "Edge Computing"
+        "Edge Computing",
+        "Electrical Engineering"
       ]
     }
   }
   </script>
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <style>
-    :root { --ink:#172033; --muted:#5d687b; --line:#e5eaf1; --blue:#155eef; --bg:#f6f8fb; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; }
-    .wrap { max-width:980px; margin:0 auto; padding:36px 22px 64px; }
-    .hero { display:flex; gap:30px; align-items:center; background:white; border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 12px 34px rgba(23,32,51,.06); }
-    .photo { width:190px; height:230px; object-fit:cover; object-position:center 25%; border-radius:16px; border:1px solid var(--line); }
-    h1 { font-size:clamp(2rem,5vw,3rem); line-height:1.1; margin:0 0 10px; letter-spacing:-.04em; }
-    .subtitle { color:var(--muted); font-size:1.05rem; margin:0 0 18px; }
-    .links { display:flex; flex-wrap:wrap; gap:10px; }
-    .links a { text-decoration:none; color:var(--blue); border:1px solid #d8e3ff; padding:8px 12px; border-radius:999px; font-weight:600; font-size:.92rem; }
-    section { background:white; border:1px solid var(--line); border-radius:18px; padding:24px 26px; margin-top:18px; }
-    h2 { margin:0 0 12px; font-size:1.3rem; }
-    p { margin:8px 0; }
-    .muted { color:var(--muted); }
-    .project { border-left:3px solid var(--blue); padding-left:16px; }
-    footer { text-align:center; color:var(--muted); font-size:.88rem; padding:28px 0 0; }
-    @media(max-width:650px) { .hero { flex-direction:column; align-items:flex-start; } .photo { width:150px; height:180px; } section { padding:20px; } }
+    :root {
+      --bg: #fcfcfb; --bg-soft: #f4f4f2; --text: #1b1d1f; --muted: #5f6469;
+      --accent: #0b5fa5; --accent-soft: #e8f1f9; --border: #e4e4df; --shadow: 0 4px 12px rgba(0,0,0,.04);
+    }
+    [data-theme="dark"] {
+      --bg: #111315; --bg-soft: #181b1e; --text: #e9eaea; --muted: #9ba1a6;
+      --accent: #6cb6ff; --accent-soft: #16293c; --border: #2a2f34; --shadow: 0 4px 12px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; font-size: 16.5px; -webkit-font-smoothing: antialiased;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
+    .nav { max-width: 880px; margin: 0 auto; padding: .8rem 1.25rem; display: flex; align-items: center; gap: 1rem; }
+    .brand { font-family: Georgia, serif; font-weight: 600; font-size: 1.1rem; color: var(--text); }
+    .brand:hover { text-decoration: none; color: var(--accent); }
+    .nav-links { display: flex; gap: .4rem; margin-left: auto; list-style: none; padding: 0; margin-block: 0; }
+    .nav-links a { font-size: .88rem; color: var(--muted); padding: .4rem .5rem; border-radius: 6px; }
+    .nav-links a:hover { color: var(--text); background: var(--bg-soft); text-decoration: none; }
+    .theme-btn { background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 1rem; transition: background .15s; }
+    .theme-btn:hover { background: var(--bg-soft); color: var(--text); }
+
+    /* Hero */
+    .hero { display: flex; gap: 2.5rem; align-items: center; padding: 4rem 0 2.5rem; }
+    .photo { width: 190px; height: 230px; object-fit: cover; object-position: center 25%; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); flex-shrink: 0; }
+    .hero-content h1 { font-size: 2.4rem; margin: 0 0 .4rem; letter-spacing: -.02em; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; margin: 0 0 .8rem; font-weight: 500; }
+    .contact-info { font-size: .9rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .contact-info a { color: var(--muted); }
+    
+    /* Buttons */
+    .links { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .btn { display: inline-flex; align-items: center; padding: .45rem .9rem; font-size: .88rem; font-weight: 600; border: 1px solid var(--border); border-radius: 999px; color: var(--text); background: var(--bg-soft); transition: all .15s ease; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent); color: white; opacity: 0.9; }
+
+    /* Sections */
+    section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+    section > h2 { font-size: 1.4rem; margin: 0 0 1.2rem; display: flex; align-items: center; gap: .6rem; }
+    section > h2::before { content: ""; width: 4px; height: 1.1em; background: var(--accent); border-radius: 2px; }
+    p { margin: .6rem 0; }
+    .muted { color: var(--muted); font-size: .95rem; }
+
+    /* Cards & Lists */
+    .card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: var(--shadow); }
+    .card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: .3rem; font-family: Georgia, serif; color: var(--text); }
+    .card-subtitle { font-size: .9rem; color: var(--muted); margin-bottom: .8rem; font-weight: 500; }
+    .card ul { margin: .5rem 0 0; padding-left: 1.2rem; }
+    .card ul li { margin-bottom: .4rem; font-size: .95rem; }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .tag { background: var(--accent-soft); color: var(--accent); font-size: .8rem; padding: .2rem .6rem; border-radius: 6px; font-weight: 600; }
+
+    /* Layout Grids */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem 0 3rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+
+    @media(max-width: 650px) {
+      .hero { flex-direction: column; text-align: center; gap: 1.5rem; padding-top: 2.5rem; }
+      .hero-content h1 { font-size: 2rem; }
+      .links { justify-content: center; }
+      .nav-links { display: none; }
+      .photo { width: 160px; height: 190px; }
+      .grid-2 { grid-template-columns: 1fr; gap: 0; }
+    }
   </style>
 </head>
 <body>
-<main class="wrap">
-  <header class="hero">
-    <img class="photo" src="assets/ajoy-shil-profile.jpg" alt="Professional portrait of Ajoy Shil">
-    <div>
-      <h1>Ajoy Shil</h1>
-      <p class="subtitle">Biomedical &amp; IoT Researcher · Embedded Systems Developer · MediEdge Developer</p>
-      <div class="links">
-        <a href="https://scholar.google.com/citations?user=pyWInO8AAAAJ&amp;hl=en" rel="me">Google Scholar</a>
-        <a href="https://orcid.org/0009-0004-8453-2406" rel="me">ORCID</a>
-        <a href="https://bd.linkedin.com/in/ajoy-shil-86668619a" rel="me">LinkedIn</a>
-      </div>
-    </div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">Ajoy Shil</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publication</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+    </nav>
   </header>
 
-  <section>
-    <h2>About</h2>
-    <p>Ajoy Shil is a researcher and embedded-systems developer working at the intersection of biomedical engineering, Internet of Things (IoT), edge computing, and remote health monitoring. His work focuses on accessible, low-cost systems that connect physiological sensing with practical digital health applications.</p>
-    <p class="muted">Education: B.Sc. in Electrical and Electronic Engineering, Port City International University, Bangladesh.</p>
-  </section>
+  <main class="wrap" id="top">
+    
+    <!-- Hero Section -->
+    <header class="hero">
+      <img class="photo" src="ajoy-shil-profile.jpg" alt="Ajoy Shil">
+      <div class="hero-content">
+        <h1>Ajoy Shil</h1>
+        <p class="subtitle">Electrical & Electronic Engineering Graduate</p>
+        <p class="contact-info">
+          Chattogram, Bangladesh · <a href="mailto:ajoyshil2000@gmail.com">ajoyshil2000@gmail.com</a>
+        </p>
+        <div class="links">
+          <a class="btn btn-primary" href="cv.pdf" target="_blank">Download CV</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=pyWInO8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://orcid.org/0009-0004-8453-2406" target="_blank" rel="noopener">ORCID</a>
+          <a class="btn" href="https://bd.linkedin.com/in/ajoy-shil-86668619a" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </header>
 
-  <section>
-    <h2>Featured Research: MediEdge</h2>
-    <div class="project">
-      <strong>MediEdge: A Low-Cost Edge-Based Cyber-Physical IoT Platform for Real-Time Remote Patient Monitoring with Comparative Validation</strong>
-      <p>MediEdge is a research platform for remote patient monitoring that integrates physiological sensors, embedded processing, and secure IoT data communication. The project explores practical, affordable approaches to connected healthcare and comparative validation of physiological measurements.</p>
-      <p><a href="https://www.sciencedirect.com/science/article/pii/S0263224126028095">View the MediEdge publication on ScienceDirect</a></p>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About</h2>
+      <p>Academically motivated Electrical and Electronic Engineering graduate from Port City International University, Bangladesh, with an excellent academic record of <strong>CGPA 3.94/4.00</strong> and a first-author publication in a Q1 Elsevier journal.</p>
+      <p>Strong interest in embedded systems, IoT-based healthcare systems, biomedical signal processing, sensor-based monitoring, and edge computing. Currently seeking a fully funded MSc or PhD position in embedded systems, IoT-based healthcare, or biomedical signal processing, with a focus on edge computing and remote patient monitoring.</p>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <h2>Journal Publication</h2>
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <div class="card-title">MediEdge: A Low-Cost Edge-Based Cyber-Physical IoT Platform for Real-Time Remote Patient Monitoring with Comparative Validation</div>
+        <div class="card-subtitle">
+          <em>Measurement (Elsevier)</em>, Vol. 292, 2026, Article 123099. 
+          <br><strong>Ajoy Shil</strong> (First Author), Joy Mohajan, Akib Jayed Islam.
+          <br>DOI: 10.1016/j.measurement.2026.123099
+        </div>
+        <ul>
+          <li>Published in a <strong>Q1 journal</strong> (Impact Factor: 5.6), Ranked in Top 10% in Instrumentation & Measurement.</li>
+          <li>Developed a low-cost ESP32-based edge-first IoT platform for multimodal physiological monitoring (ECG, PPG/SpO2, body temperature, ambient sensing).</li>
+          <li>Implemented embedded signal processing: baseline stabilization, cascaded IIR filtering, QRS detection, and confidence-aware SpO2 stabilization.</li>
+          <li>Validated with 2000 paired prototype-reference observations: HR MAE = 2.88 bpm (ICC = 0.961), SpO2 MAE = 2.12% (ICC = 0.786).</li>
+          <li>Demonstrated edge resilience under intermittent connectivity with 98.7% cloud synchronization success and 12.6 h battery operation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Research & Experience Section -->
+    <section id="experience">
+      <h2>Research Experience</h2>
+      
+      <div class="card">
+        <div class="card-title">LifeTrack: Wearable Smart Health Monitoring and Emergency Alert System</div>
+        <div class="card-subtitle">Thesis Work</div>
+        <ul>
+          <li>Developed an IoT-based wearable health monitoring and emergency alert system for continuous tracking of vital health parameters.</li>
+          <li>Integrated heart rate monitoring, SpO2, body temperature sensing, fall detection, GPS tracking, and emergency SMS alerts.</li>
+          <li>Designed the system to support real-time cloud monitoring and offline functionality for reliable patient support.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">IMU Gait Dataset Analysis Report</div>
+        <div class="card-subtitle">Data Analyst (Supervisor: Akib Jayed Islam, Assistant Professor, PCIU)</div>
+        <ul>
+          <li>Analyzed an IMU gait dataset for gait recognition and identified key priorities including label alignment, window-based modeling, trial-level validation, and class imbalance handling.</li>
+          <li>Evaluated the dataset as suitable for future gait recognition and sensor-based movement analysis research.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Teaching Section -->
+    <div class="grid-2">
+      <section id="education" style="border-top: none;">
+        <h2>Education</h2>
+        <div class="card">
+          <div class="card-title">B.Sc. in Electrical & Electronic Engineering</div>
+          <div class="card-subtitle">Port City International University</div>
+          <p class="muted">Completed: February 2026<br>CGPA: <strong>3.94/4.00</strong> | Credit Hours: 157.00 | Assessment: Excellent</p>
+        </div>
+      </section>
+
+      <section id="teaching" style="border-top: none;">
+        <h2>Teaching Experience</h2>
+        <div class="card">
+          <div class="card-title">Mathematics Instructor</div>
+          <div class="card-subtitle">SSC and HSC Level</div>
+          <p class="muted" style="font-size: .9rem;">Taught Mathematics and Higher Mathematics. Developed clear, structured explanations to improve conceptual understanding, analytical thinking, and exam preparedness.</p>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <section>
-    <h2>Other Research</h2>
-    <p><strong>LifeTrack</strong> — wearable IoT research focused on real-time health monitoring and fall-detection capabilities.</p>
-    <p class="muted">Research interests: Biomedical Signal Processing (ECG/PPG), IoT-based healthcare, embedded system design, wearable sensing, edge computing, and physiological-signal validation.</p>
-  </section>
+    <!-- Skills & Projects Section -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      
+      <div class="card" style="padding: 1.2rem;">
+        <p style="margin-top:0;"><strong>Programming:</strong> C/C++ (Advanced), Python (Intermediate), Arduino (Advanced), MATLAB (Intermediate)</p>
+        <p><strong>Hardware & Systems:</strong> ESP32, Arduino, Sensors, Embedded Systems, IoT Devices, PCB Design</p>
+        <p><strong>Software:</strong> MATLAB, Proteus, AutoCAD, Arduino IDE, FreeRTOS</p>
+        <p style="margin-bottom:0;"><strong>Research Skills:</strong> Signal Processing, Data Analysis, IoT-Based Monitoring, Gait Data Analysis, Statistical Validation</p>
+      </div>
 
-  <section>
-    <h2>Academic Profiles</h2>
-    <p><a href="https://scholar.google.com/citations?user=pyWInO8AAAAJ&amp;hl=en">Google Scholar — Ajoy Shil</a></p>
-    <p><a href="https://orcid.org/0009-0004-8453-2406">ORCID — 0009-0004-8453-2406</a></p>
-    <p><a href="https://bd.linkedin.com/in/ajoy-shil-86668619a">LinkedIn — Ajoy Shil</a></p>
-  </section>
+      <h2 style="margin-top: 2rem;">Academic Project</h2>
+      <div class="card">
+        <div class="card-title">Solar Tracking System Using Arduino</div>
+        <p class="muted" style="font-size: .95rem; margin:0;">Designed and implemented an automatic solar tracking system using Arduino UNO, LDR sensors, and a servo motor. Improved solar energy collection efficiency through dynamic panel positioning.</p>
+      </div>
+    </section>
 
-  <footer>© <span id="year">2026</span> Ajoy Shil · Researcher Profile</footer>
-</main>
+  </main>
+
+  <footer>
+    © <span id="year">2026</span> Ajoy Shil · Researcher Profile
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      function paint() { btn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; }
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        paint();
+      });
+      paint();
+    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
