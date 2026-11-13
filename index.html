@@ -30,13 +30,45 @@
     .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:560px}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line)}th{color:var(--accent);background:#142238}td{color:var(--muted)}tr:last-child td{border-bottom:0}
     .notice{font-size:.9rem;color:#b7c5d8;background:#111d2e;border:1px solid var(--line);padding:17px;border-radius:13px}
     footer{padding:35px 0;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}.footerrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    
+    /* Project Media Styles */
+    .project-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 15px 0 20px 0;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+    .video-btn:hover {
+      background: #ef4444;
+      color: white;
+      text-decoration: none;
+    }
+
     @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:60px;gap:28px}.grid,.two-col{grid-template-columns:1fr}.statgrid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px}.navlinks a{font-size:.82rem}}
     @media(max-width:520px){.wrap{width:min(100% - 28px,var(--max))}nav{align-items:flex-start;padding:15px 0;flex-direction:column}.navlinks{row-gap:7px}.statgrid{grid-template-columns:1fr 1fr}.card{padding:19px}section{padding:48px 0}}
     
-    /* Styles for profile photo and status badge */
+    /* Styles for profile photo and status badges */
     .profile-photo { width: 100%; max-width: 250px; border-radius: 20px; border: 2px solid var(--line); margin-bottom: 18px; object-fit: cover; }
     .status-badge { display: inline-block; background: rgba(255, 193, 7, 0.15); color: #ffc107; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; border: 1px solid rgba(255, 193, 7, 0.3); }
     .published-badge { display: inline-block; background: rgba(102, 224, 194, 0.15); color: var(--accent); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; border: 1px solid rgba(102, 224, 194, 0.3); }
+    .dev-badge { display: inline-block; background: rgba(128, 183, 255, 0.15); color: var(--blue); padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; border: 1px solid rgba(128, 183, 255, 0.3); }
   </style>
 </head>
 <body>
@@ -45,7 +77,7 @@
     <nav aria-label="Main navigation">
       <a class="brand" href="#home">AJOY <span>SHIL</span></a>
       <div class="navlinks">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#mediedge">MediEdge</a><a href="#lifetrack">LifeTrack</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#mediedge">MediEdge</a><a href="#lifetrack">LifeTrack</a><a href="#safeguard">SafeGuard</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
       </div>
     </nav>
   </div>
@@ -66,7 +98,6 @@
       </div>
     </div>
     <aside class="hero-card">
-      <!-- UPDATED FILE EXTENSION TO .png -->
       <img src="ajoy-shil-profile.png" alt="Ajoy Shil Profile Photo" class="profile-photo">
       <h2>Research profile</h2>
       <p>Electrical and Electronic Engineering graduate · Port City International University, Bangladesh</p>
@@ -94,11 +125,14 @@
       <p class="lead">My projects explore how affordable embedded platforms can acquire physiological and motion data, process it locally, and communicate useful information reliably.</p>
       <div class="grid" style="margin-top:25px">
         
-        <!-- 1. MEDIEDGE (Now First) -->
+        <!-- 1. MEDIEDGE -->
         <article class="card wide" id="mediedge">
           <div class="published-badge">Published in Measurement (Elsevier)</div>
           <div class="tagline">Cyber-Physical IoT · Remote Patient Monitoring · Edge Computing</div>
           <h3>MediEdge: A low-cost edge-based cyber-physical IoT platform for real-time remote patient monitoring with comparative validation</h3>
+          
+          <img src="mediedge.png" alt="MediEdge Product Hardware" class="project-image">
+          
           <p>MediEdge is a low-cost remote patient-monitoring platform developed using an ESP32-based embedded architecture and physiological sensors. The system explores local acquisition and processing of vital-sign data with secure cloud synchronization.</p>
           
           <div class="statgrid">
@@ -130,16 +164,25 @@
               </ul>
             </div>
           </div>
-          <div class="callout" style="margin-top:20px; margin-bottom:0;">
-            <strong>Publication Reference:</strong> Shil, A., Mohajan, J., & Islam, A. J. (2026). <em>Measurement (Elsevier)</em>, Vol. 292, Article 123099. DOI: 10.1016/j.measurement.2026.123099
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+            <div class="callout" style="margin: 0; flex: 1; min-width: 250px;">
+              <strong>Publication Reference:</strong> Shil, A., Mohajan, J., & Islam, A. J. (2026). <em>Measurement (Elsevier)</em>, Vol. 292, Article 123099. DOI: 10.1016/j.measurement.2026.123099
+            </div>
+            <a href="https://drive.google.com/file/d/1hwV_wvsvIk7IfWe6XpqLyVXZy-dZ1eJR/view" target="_blank" class="video-btn" style="margin-left: 15px;">
+              ▶ Watch Product Demo
+            </a>
           </div>
         </article>
 
-        <!-- 2. LIFETRACK (Now Second) -->
+        <!-- 2. LIFETRACK -->
         <article class="card wide" id="lifetrack">
           <div class="status-badge">Under Review in Journal</div>
           <div class="tagline">Wearable IoT · Edge AI · Fall Detection · Biomedical Engineering</div>
           <h3>LifeTrack: A Low-Cost Edge-First Wearable IoT Platform with Measured Cryptographic Overhead and Edge-Resilience for Real-Time Health Monitoring and Fall Detection</h3>
+          
+          <img src="lifetrack.png" alt="LifeTrack Wearable Prototype" class="project-image">
+
           <p>LifeTrack is a low-cost wearable health-monitoring prototype built around a dual-core ESP32. It combines physiological sensing, motion-based fall detection, local edge processing, and GSM emergency communication. The design aims to remain useful when Wi-Fi or internet connectivity is unavailable.</p>
           
           <div class="statgrid">
@@ -186,6 +229,46 @@
             <strong>Research contribution:</strong> LifeTrack investigates the feasibility of combining low-cost wearable sensing, local processing, security-cost measurement, and connectivity-independent emergency communication in one embedded platform.
           </div>
         </article>
+
+        <!-- 3. SAFEGUARD -->
+        <article class="card wide" id="safeguard">
+          <div class="dev-badge">Ongoing Project</div>
+          <div class="tagline">Personal Safety · IoT · Emergency Alerting</div>
+          <h3>SafeGuard: [Insert Full Project Title Here]</h3>
+          
+          <img src="safeguard.png" alt="SafeGuard Project Prototype" class="project-image" onerror="this.src='https://placehold.co/800x400/142238/a8b6ca?text=SafeGuard+Image+Coming+Soon'">
+
+          <p>[Insert a 2-3 sentence overview of the SafeGuard project here. Explain what problem it solves, what sensors it uses, and how it helps the user.]</p>
+          
+          <div class="statgrid">
+            <div class="stat"><strong>[Value]</strong><span>[Metric 1, e.g., Cost]</span></div>
+            <div class="stat"><strong>[Value]</strong><span>[Metric 2, e.g., Accuracy]</span></div>
+            <div class="stat"><strong>[Value]</strong><span>[Metric 3, e.g., Battery Life]</span></div>
+            <div class="stat"><strong>[Value]</strong><span>[Metric 4, e.g., Latency]</span></div>
+          </div>
+
+          <div class="two-col">
+            <div>
+              <h3>System architecture</h3>
+              <ul>
+                <li>[Architecture point 1, e.g., Microcontroller used]</li>
+                <li>[Architecture point 2, e.g., Communication protocol]</li>
+                <li>[Architecture point 3, e.g., Local processing capability]</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Hardware components</h3>
+              <ul>
+                <li>[Hardware 1, e.g., Sensor X]</li>
+                <li>[Hardware 2, e.g., Sensor Y]</li>
+                <li>[Hardware 3, e.g., Power management]</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:20px; margin-bottom:0;">
+            <strong>Research contribution:</strong> [Insert 1 sentence summarizing the main contribution or goal of SafeGuard].
+          </div>
+        </article>
         
       </div>
     </div>
@@ -204,14 +287,12 @@
     </div>
   </section>
 
-  <!-- UPDATED EXPERIENCE SECTION -->
   <section id="experience">
     <div class="wrap">
       <div class="section-kicker">04 / Experience & Leadership</div>
       <h2 class="section-title">Practical experience</h2>
       <div class="grid">
         
-        <!-- BPDB Industrial Training -->
         <article class="card wide">
           <h3>Industrial Trainee</h3>
           <p><strong>Bangladesh Power Development Board (BPDB) — Hathazari 100MW Peaking Power Station</strong><br>
@@ -224,7 +305,6 @@
           </ul>
         </article>
 
-        <!-- Teaching Experience -->
         <article class="card">
           <h3>Mathematics Instructor</h3>
           <p><strong>HSC & SSC Level (Bangladesh)</strong><br>
@@ -232,13 +312,11 @@
           <p>Taught Mathematics and Higher Mathematics to SSC and HSC students in coaching and academic support environments. Developed clear and structured explanations to improve students' conceptual understanding and problem-solving ability.</p>
         </article>
 
-        <!-- Leadership -->
         <article class="card">
           <h3>Student Leadership</h3>
           <p><strong>PCIU EEE Club</strong><br>Joint Secretary and former Convenor. Participated in student coordination, organized academic events, technical programs, and departmental activities.</p>
         </article>
 
-        <!-- Certifications -->
         <article class="card wide">
           <h3>Selected Learning & Certifications</h3>
           <ul>
