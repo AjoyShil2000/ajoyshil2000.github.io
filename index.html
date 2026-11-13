@@ -233,40 +233,43 @@
         <!-- 3. SAFEGUARD -->
         <article class="card wide" id="safeguard">
           <div class="dev-badge">Ongoing Project</div>
-          <div class="tagline">Personal Safety · IoT · Emergency Alerting</div>
-          <h3>SafeGuard: [Insert Full Project Title Here]</h3>
+          <div class="tagline">Industrial Safety · Wearable IoT · LoRa Communication · Firebase Cloud</div>
+          <h3>SafeGuard: IoT-Based Smart Safety Vest and Smart Helmet System for Industrial Worker Safety Monitoring</h3>
           
-          <img src="safeguard.png" alt="SafeGuard Project Prototype" class="project-image" onerror="this.src='https://placehold.co/800x400/142238/a8b6ca?text=SafeGuard+Image+Coming+Soon'">
+          <!-- If safeguard.png is uploaded to GitHub, it will show. Otherwise, it shows a nice placeholder -->
+          <img src="safeguard.png" alt="SafeGuard Smart Vest and Helmet System" class="project-image" onerror="this.src='https://placehold.co/800x400/142238/a8b6ca?text=SafeGuard+Project+Prototype'">
 
-          <p>[Insert a 2-3 sentence overview of the SafeGuard project here. Explain what problem it solves, what sensors it uses, and how it helps the user.]</p>
+          <p>SafeGuard addresses multiple threats in high-risk industrial environments (falls, toxic gases, heat stress) by integrating a smart helmet and smart vest. It utilizes an ESP32, LoRa for long-distance blind-spot coverage, and Firebase for real-time cloud monitoring, creating a comprehensive "human-environment-equipment" safety net.</p>
           
           <div class="statgrid">
-            <div class="stat"><strong>[Value]</strong><span>[Metric 1, e.g., Cost]</span></div>
-            <div class="stat"><strong>[Value]</strong><span>[Metric 2, e.g., Accuracy]</span></div>
-            <div class="stat"><strong>[Value]</strong><span>[Metric 3, e.g., Battery Life]</span></div>
-            <div class="stat"><strong>[Value]</strong><span>[Metric 4, e.g., Latency]</span></div>
+            <div class="stat"><strong>Dual-Device</strong><span>Helmet + Vest Collaboration</span></div>
+            <div class="stat"><strong>LoRa + Wi-Fi</strong><span>Hybrid Communication</span></div>
+            <div class="stat"><strong>Multi-Sensor</strong><span>Gas, HR, IMU, Temp</span></div>
+            <div class="stat"><strong>Piezoelectric</strong><span>Energy Harvesting Design</span></div>
           </div>
 
           <div class="two-col">
             <div>
-              <h3>System architecture</h3>
+              <h3>System Architecture</h3>
               <ul>
-                <li>[Architecture point 1, e.g., Microcontroller used]</li>
-                <li>[Architecture point 2, e.g., Communication protocol]</li>
-                <li>[Architecture point 3, e.g., Local processing capability]</li>
+                <li>ESP32 dual-core processing for sensor threshold logic and local alerts.</li>
+                <li>LoRa for long-distance transmission in poor 4G/5G industrial sites.</li>
+                <li>Wi-Fi gateway syncing LoRa data to Firebase Realtime Database.</li>
+                <li>Piezoelectric energy harvesting for sustainable low-power operation.</li>
+                <li>Mobile App & Website (Flutter) for real-time supervisor dashboards.</li>
               </ul>
             </div>
             <div>
-              <h3>Hardware components</h3>
+              <h3>Hardware Components</h3>
               <ul>
-                <li>[Hardware 1, e.g., Sensor X]</li>
-                <li>[Hardware 2, e.g., Sensor Y]</li>
-                <li>[Hardware 3, e.g., Power management]</li>
+                <li><strong>Smart Helmet:</strong> MPU6050 (fall/impact), MQ-135 (gas), DHT22 (temp), IR/FSR (wear detection).</li>
+                <li><strong>Smart Vest:</strong> Heart rate sensor (fatigue monitoring), additional accelerometers (posture).</li>
+                <li><strong>Alerts:</strong> Local buzzer and LED indicators triggered by threshold violations.</li>
               </ul>
             </div>
           </div>
           <div class="callout" style="margin-top:20px; margin-bottom:0;">
-            <strong>Research contribution:</strong> [Insert 1 sentence summarizing the main contribution or goal of SafeGuard].
+            <strong>Research contribution:</strong> Integrates environmental perception (helmet) with physiological monitoring (vest) using a hybrid LoRa/Firebase architecture to provide real-time proactive warnings in network-constrained industrial environments.
           </div>
         </article>
         
@@ -279,7 +282,7 @@
       <div class="section-kicker">03 / Technical interests</div>
       <h2 class="section-title">Skills & research toolkit</h2>
       <div class="grid">
-        <article class="card"><h3>Embedded & IoT systems</h3><p>ESP32, sensor integration, embedded C/C++, FreeRTOS concepts, wireless communication, and IoT prototyping.</p></article>
+        <article class="card"><h3>Embedded & IoT systems</h3><p>ESP32, sensor integration, embedded C/C++, FreeRTOS concepts, LoRa, wireless communication, and IoT prototyping.</p></article>
         <article class="card"><h3>Biomedical signal processing</h3><p>ECG and PPG signal acquisition, filtering, waveform analysis, heart-rate and SpO₂ monitoring, and comparative validation.</p></article>
         <article class="card"><h3>Programming & analysis</h3><p>Python, MATLAB, C/C++, data processing, statistical analysis, and experimental result visualization.</p></article>
         <article class="card"><h3>Research & development</h3><p>Hardware prototyping, system integration, experimental evaluation, technical documentation, and research manuscript preparation.</p></article>
